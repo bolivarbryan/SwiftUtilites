@@ -23,14 +23,20 @@ class SwiftUtilitiesTests: XCTestCase {
     func testInvalidUrl(){
         self.measureBlock() {
         XCTAssertFalse(self.util.validateUrl("http://thisisadomain"), "http://thisisadomain should be a invalid url")
-
         }
     }
-    
     func testValidUrl(){
         self.measureBlock() {
         XCTAssertTrue(self.util.validateUrl("http://www.mercadorata.com"), "http://www.google.com should be a valid url")
             }
     }
     
+    func testValidEmail(){
+        XCTAssertTrue(self.util.validateEmail("bolivarbryan@gmail.com"), "bolivarbryan@gmail.com should be a valid email")
+    }
+    func testInValidEmail(){
+        XCTAssertFalse(self.util.validateEmail("fakeemail"), "fakeemail should be a invalid email")
+    }
+    
+
 }
