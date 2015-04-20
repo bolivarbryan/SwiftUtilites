@@ -37,6 +37,10 @@ class SwiftUtilitiesTests: XCTestCase {
     func testInValidEmail(){
         XCTAssertFalse(self.util.validateEmail("fakeemail"), "fakeemail should be a invalid email")
     }
-    
-
+    func testInValidPhone(){
+        XCTAssertFalse(self.util.validatePhone("+123e 4533"), "12345s33 should be a invalid phone")
+    }
+    func testTimeComparisonWithCurrentTime(){
+        self.util.compareWithCurrentTime()
+    }
 }
